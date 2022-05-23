@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmEarth.Core", "XrmEarth.Core\XrmEarth.Core.csproj", "{74E83B5B-32CE-4F13-A658-01F8174CE342}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmEarth.Data", "XrmEarth.Data\XrmEarth.Data.csproj", "{0A3EF066-D82B-4DC7-B865-E7507F0897BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XrmEarth.Workflows", "XrmEarth.Workflows\XrmEarth.Workflows.csproj", "{CBB7F7AB-B154-47C4-A1DA-0B1E21B4FCB7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74E83B5B-32CE-4F13-A658-01F8174CE342}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74E83B5B-32CE-4F13-A658-01F8174CE342}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74E83B5B-32CE-4F13-A658-01F8174CE342}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74E83B5B-32CE-4F13-A658-01F8174CE342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A3EF066-D82B-4DC7-B865-E7507F0897BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A3EF066-D82B-4DC7-B865-E7507F0897BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A3EF066-D82B-4DC7-B865-E7507F0897BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A3EF066-D82B-4DC7-B865-E7507F0897BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBB7F7AB-B154-47C4-A1DA-0B1E21B4FCB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBB7F7AB-B154-47C4-A1DA-0B1E21B4FCB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBB7F7AB-B154-47C4-A1DA-0B1E21B4FCB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBB7F7AB-B154-47C4-A1DA-0B1E21B4FCB7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {180FB4FD-E9DE-4190-8EB7-14A4ED188E12}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://aliozturkws.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = XrmEarth.Core\\XrmEarth.Core.csproj
+		SccProjectName1 = XrmEarth.Core
+		SccLocalPath1 = XrmEarth.Core
+		SccProjectUniqueName2 = XrmEarth.Data\\XrmEarth.Data.csproj
+		SccProjectName2 = XrmEarth.Data
+		SccLocalPath2 = XrmEarth.Data
+		SccProjectUniqueName3 = XrmEarth.Workflows\\XrmEarth.Workflows.csproj
+		SccProjectName3 = XrmEarth.Workflows
+		SccLocalPath3 = XrmEarth.Workflows
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.props" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.props')" />
+  <Import Project="..\packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('..\packages\ILMerge.3.0.41\build\ILMerge.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CBB7F7AB-B154-47C4-A1DA-0B1E21B4FCB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XrmEarth.Workflows</RootNamespace>
+    <AssemblyName>XrmEarth.Workflows</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>XrmEarth.Workflows.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.42\lib\net462\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.6.1.7600.16394\lib\net35\Microsoft.IdentityModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.CoreAssemblies.9.0.2.42\lib\net462\Microsoft.Xrm.Sdk.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xrm.Sdk.Workflow, Version=9.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CrmSdk.Workflow.9.0.2.42\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Activities.Presentation" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crm\AddBusinessTime.cs" />
+    <Compile Include="Crm\AddMarketingListToCampaign.cs" />
+    <Compile Include="Crm\AddRoleToTeam.cs" />
+    <Compile Include="Crm\AddRoleToUser.cs" />
+    <Compile Include="Crm\AddToMarketingList.cs" />
+    <Compile Include="Crm\AddUserToTeam.cs" />
+    <Compile Include="Crm\ApplyRoutingRule.cs" />
+    <Compile Include="Crm\AssociateEntity.cs" />
+    <Compile Include="Crm\BetweenSpecificHours.cs" />
+    <Compile Include="Crm\CalculateRollupField.cs" />
+    <Compile Include="Crm\CheckAssociateEntity.cs" />
+    <Compile Include="Crm\CheckTeamInRole.cs" />
+    <Compile Include="Crm\CheckUserInRole.cs" />
+    <Compile Include="Crm\CheckUserInTeam.cs" />
+    <Compile Include="Crm\CloneEntity.cs" />
+    <Compile Include="Crm\CopyMarketingListMembers.cs" />
+    <Compile Include="Crm\CopyToStaticList.cs" />
+    <Compile Include="Crm\DeleteEntity.cs" />
+    <Compile Include="Crm\DiassociateEntity.cs" />
+    <Compile Include="Crm\DurationOfBusinessHours.cs" />
+    <Compile Include="Crm\EmailToTeam.cs" />
+    <Compile Include="Crm\EntityJsonSerializer.cs" />
+    <Compile Include="Crm\EntityMobileDeepLink.cs" />
+    <Compile Include="Crm\ExecuteWorkflow.cs" />
+    <Compile Include="Crm\GetAppRecordUrl.cs" />
+    <Compile Include="Crm\GetAvailableNextDay.cs" />
+    <Compile Include="Crm\GetCurrentUser.cs" />
+    <Compile Include="Crm\GetCurrentUserUILaguageCode.cs" />
+    <Compile Include="Crm\GetNextProcessStage.cs" />
+    <Compile Include="Crm\GetOwnerTypeByRecordUrl.cs" />
+    <Compile Include="Crm\GetOwnerUserUILaguageCode.cs" />
+    <Compile Include="Crm\GetPreviousProcessStage.cs" />
+    <Compile Include="Crm\GetReferenceByRecordUrl.cs" />
+    <Compile Include="Crm\IsMemberOfMarketingList.cs" />
+    <Compile Include="Crm\QualifyLead.cs" />
+    <Compile Include="Crm\QueryValues.cs" />
+    <Compile Include="Crm\RemoveFromAllMarketingLists.cs" />
+    <Compile Include="Crm\RemoveFromMarketingList.cs" />
+    <Compile Include="Crm\RemoveRoleFromTeam.cs" />
+    <Compile Include="Crm\RemoveRoleFromUser.cs" />
+    <Compile Include="Crm\RemoveUserFromTeam.cs" />
+    <Compile Include="Crm\RollupFunctions.cs" />
+    <Compile Include="Crm\SalesAddLineItem.cs" />
+    <Compile Include="Crm\SendEmail.cs" />
+    <Compile Include="Crm\SendEmailFromTemplateToUsersInRole.cs" />
+    <Compile Include="Crm\SendEmailToUsersInRole.cs" />
+    <Compile Include="Crm\SetProcessStage.cs" />
+    <Compile Include="Crm\SetState.cs" />
+    <Compile Include="Crm\SetUserSettings.cs" />
+    <Compile Include="Crm\SharedRecordWithTeam.cs" />
+    <Compile Include="Crm\SharedRecordWithUser.cs" />
+    <Compile Include="Crm\UnshareRecordWithTeam.cs" />
+    <Compile Include="Crm\UnshareRecordWithUser.cs" />
+    <Compile Include="Crm\UpdateChildRecord.cs" />
+    <Compile Include="Crm\UpdateEntity.cs" />
+    <Compile Include="Date\AddBusinessDays.cs" />
+    <Compile Include="Date\AddDays.cs" />
+    <Compile Include="Date\AddHours.cs" />
+    <Compile Include="Date\AddMinutes.cs" />
+    <Compile Include="Date\AddMonths.cs" />
+    <Compile Include="Date\AddWeeks.cs" />
+    <Compile Include="Date\AddYears.cs" />
+    <Compile Include="Date\BeforeOrAfterXDayInMonth.cs" />
+    <Compile Include="Date\DateDiffDays.cs" />
+    <Compile Include="Date\DateDifference.cs" />
+    <Compile Include="Date\DateDiffHours.cs" />
+    <Compile Include="Date\DateDiffMinutes.cs" />
+    <Compile Include="Date\DateDiffMonths.cs" />
+    <Compile Include="Date\DateDiffYears.cs" />
+    <Compile Include="Date\GetDayNumber.cs" />
+    <Compile Include="Date\GetDayNumberOfWeek.cs" />
+    <Compile Include="Date\GetDayNumberOfYear.cs" />
+    <Compile Include="Date\GetDayOfWeek.cs" />
+    <Compile Include="Date\GetMonthNumber.cs" />
+    <Compile Include="Date\GetMonthStartEnd.cs" />
+    <Compile Include="Date\GetQuarterNumberOfYear.cs" />
+    <Compile Include="Date\GetQuarterStartEnd.cs" />
+    <Compile Include="Date\GetWeekNumberOfYear.cs" />
+    <Compile Include="Date\GetWeekStartEnd.cs" />
+    <Compile Include="Date\GetYearNumber.cs" />
+    <Compile Include="Date\GetYearStartEnd.cs" />
+    <Compile Include="Date\IsBetween.cs" />
+    <Compile Include="Date\IsBusinessDay.cs" />
+    <Compile Include="Date\IsSameDay.cs" />
+    <Compile Include="Date\RelativeTime.cs" />
+    <Compile Include="Date\RoundToHalfHour.cs" />
+    <Compile Include="Date\RoundToHour.cs" />
+    <Compile Include="Date\RoundToQuarterHour.cs" />
+    <Compile Include="Date\SetDatePart.cs" />
+    <Compile Include="Date\SetTime.cs" />
+    <Compile Include="Date\ToDateTime.cs" />
+    <Compile Include="Date\ToUTCString.cs" />
+    <Compile Include="Geo\GeocodeAddress.cs" />
+    <Compile Include="Note\CheckAttachment.cs" />
+    <Compile Include="Note\CopyNote.cs" />
+    <Compile Include="Note\DeleteAttachment.cs" />
+    <Compile Include="Note\DeleteAttachmentByName.cs" />
+    <Compile Include="Note\DeleteNote.cs" />
+    <Compile Include="Note\MoveNote.cs" />
+    <Compile Include="Note\UpdateNoteText.cs" />
+    <Compile Include="Note\UpdateNoteTitle.cs" />
+    <Compile Include="Numeric\Add.cs" />
+    <Compile Include="Numeric\Average.cs" />
+    <Compile Include="Numeric\Divide.cs" />
+    <Compile Include="Numeric\Max.cs" />
+    <Compile Include="Numeric\Min.cs" />
+    <Compile Include="Numeric\Multiply.cs" />
+    <Compile Include="Numeric\RandomNumber.cs" />
+    <Compile Include="Numeric\RandomNumberBetween.cs" />
+    <Compile Include="Numeric\Round.cs" />
+    <Compile Include="Numeric\Subtract.cs" />
+    <Compile Include="Numeric\ToDecimal.cs" />
+    <Compile Include="Numeric\ToInteger.cs" />
+    <Compile Include="Numeric\Truncate.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="String\Contains.cs" />
+    <Compile Include="String\CreateEmptySpaces.cs" />
+    <Compile Include="String\DecimalToMoneyText.cs" />
+    <Compile Include="String\Decrypt.cs" />
+    <Compile Include="String\DurationToText.cs" />
+    <Compile Include="String\Encrypt.cs" />
+    <Compile Include="String\EndsWith.cs" />
+    <Compile Include="String\HtmlToText.cs" />
+    <Compile Include="Numeric\IntToDecimal.cs" />
+    <Compile Include="String\IntToText.cs" />
+    <Compile Include="String\JaroWinklerSimilarity.cs" />
+    <Compile Include="String\Join.cs" />
+    <Compile Include="String\Length.cs" />
+    <Compile Include="String\OnlyOneSpace.cs" />
+    <Compile Include="String\PadLeft.cs" />
+    <Compile Include="String\PadLeftDynamic.cs" />
+    <Compile Include="String\PadRight.cs" />
+    <Compile Include="String\PadRightDynamic.cs" />
+    <Compile Include="String\RandomString.cs" />
+    <Compile Include="String\RegexExtract.cs" />
+    <Compile Include="String\RegexMatch.cs" />
+    <Compile Include="String\RegexReplace.cs" />
+    <Compile Include="String\RegexReplaceWithSpace.cs" />
+    <Compile Include="String\Replace.cs" />
+    <Compile Include="String\ReplaceWithSpace.cs" />
+    <Compile Include="String\Reverse.cs" />
+    <Compile Include="String\StartsWith.cs" />
+    <Compile Include="String\Substring.cs" />
+    <Compile Include="String\TextToQRCode.cs" />
+    <Compile Include="String\ToLower.cs" />
+    <Compile Include="String\ToTitleCase.cs" />
+    <Compile Include="String\ToUpper.cs" />
+    <Compile Include="String\Trim.cs" />
+    <Compile Include="String\WordCount.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\XrmEarth.Core\XrmEarth.Core.csproj">
+      <Project>{74e83b5b-32ce-4f13-a658-01f8174ce342}</Project>
+      <Name>XrmEarth.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XrmEarth.Data\XrmEarth.Data.csproj">
+      <Project>{0a3ef066-d82b-4dc7-b865-e7507f0897bc}</Project>
+      <Name>XrmEarth.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="ILMerge.props" />
+    <None Include="packages.config" />
+    <None Include="XrmEarth.Workflows.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ILMergeOrder.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILMerge.3.0.41\build\ILMerge.props'))" />
+    <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.props'))" />
+    <Error Condition="!Exists('..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.targets'))" />
+  </Target>
+  <Import Project="..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.targets" Condition="Exists('..\packages\MSBuild.ILMerge.Task.1.1.3\build\MSBuild.ILMerge.Task.targets')" />
+</Project>
