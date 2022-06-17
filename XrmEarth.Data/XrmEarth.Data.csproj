@@ -50,6 +50,7 @@
     <Compile Include="Const\LanguageCode.cs" />
     <Compile Include="Const\RelationShipNames.cs" />
     <Compile Include="Model\GeoCodeResponse.cs" />
+    <Compile Include="Model\RollupFunctionsForJaroWinklerSimilarityModel.cs" />
     <Compile Include="Model\RollupFunctionsResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

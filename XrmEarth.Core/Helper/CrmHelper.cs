@@ -425,5 +425,75 @@ namespace XrmEarth.Core
             query.ColumnSet.AllColumns = true;
             return service.RetrieveMultiple(query);
         }
+
+        public static EntityCollection GetAllRecord(IOrganizationService service, QueryExpression query, int pageCount = 5000)
+        {
+            query.PageInfo = new PagingInfo();
+            query.PageInfo.Count = pageCount;
+            query.PageInfo.PageNumber = 1;
+
+            EntityCollection totalResults = new EntityCollection();
+
+            while (true)
+            {
+                EntityCollection results = service.RetrieveMultiple(query);
+
+                if (results.MoreRecords)
+                {
+                    query.PageInfo.PageNumber++;
+                    query.PageInfo.PagingCookie = results.PagingCookie;
+                    totalResults.Entities.AddRange(results.Entities);
+                }
+                else
+                {
+                    totalResults.Entities.AddRange(results.Entities);
+                    break;
+                }
+            }
+
+            return totalResults;
+        }
+
+        public static EntityCollection GetRollupFunctionsForJaroWinklerSimilarity(IOrganizationService service, string fetchXML, string recordUrl, string recordUrl2 = null, string inputText1 = null, string inputText2 = null)
+        {
+            Guid entityId2 = Guid.Empty;
+
+            if (!string.IsNullOrEmpty(recordUrl2))
+            {
+                entityId2 = RecordUrlHelper.GetIdByRecordUrl(recordUrl2);
+
+                if (fetchXML.Contains("RecordId2"))
+                    fetchXML = fetchXML.Replace("RecordId2", entityId2.ToString());
+            }
+
+            if (!string.IsNullOrEmpty(recordUrl))
+            {
+                var entityId = RecordUrlHelper.GetIdByRecordUrl(recordUrl);
+
+                if (fetchXML.Contains("RecordId"))
+                    fetchXML = fetchXML.Replace("RecordId", entityId.ToString());
+            }
+
+            if (!string.IsNullOrEmpty(inputText1))
+            {
+                if (fetchXML.Contains("InputText1"))
+                    fetchXML = fetchXML.Replace("InputText1", inputText1);
+            }
+
+            if (!string.IsNullOrEmpty(inputText2))
+            {
+                if (fetchXML.Contains("InputText2"))
+                    fetchXML = fetchXML.Replace("InputText2", inputText2);
+            }
+
+            FetchXmlToQueryExpressionRequest conversionRequest = new FetchXmlToQueryExpressionRequest
+            {
+                FetchXml = fetchXML
+            };
+
+            FetchXmlToQueryExpressionResponse conversionResponse = (FetchXmlToQueryExpressionResponse)service.Execute(conversionRequest);
+
+            return GetAllRecord(service, conversionResponse.Query);
+        }
     }
 }

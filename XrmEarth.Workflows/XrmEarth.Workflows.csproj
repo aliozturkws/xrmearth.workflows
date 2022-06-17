@@ -61,6 +61,9 @@
       <HintPath>..\packages\Microsoft.CrmSdk.Workflow.9.0.2.42\lib\net462\Microsoft.Xrm.Sdk.Workflow.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Activities" />
     <Reference Include="System.Activities.Presentation" />
@@ -125,6 +128,7 @@
     <Compile Include="Crm\RemoveRoleFromUser.cs" />
     <Compile Include="Crm\RemoveUserFromTeam.cs" />
     <Compile Include="Crm\RollupFunctions.cs" />
+    <Compile Include="Crm\RollupFunctionsForJaroWinklerSimilarity.cs" />
     <Compile Include="Crm\SalesAddLineItem.cs" />
     <Compile Include="Crm\SendEmail.cs" />
     <Compile Include="Crm\SendEmailFromTemplateToUsersInRole.cs" />
@@ -177,6 +181,7 @@
     <Compile Include="Date\ToUTCString.cs" />
     <Compile Include="Geo\GeocodeAddress.cs" />
     <Compile Include="Note\CheckAttachment.cs" />
+    <Compile Include="Note\CheckAttachmentForEntity.cs" />
     <Compile Include="Note\CopyNote.cs" />
     <Compile Include="Note\DeleteAttachment.cs" />
     <Compile Include="Note\DeleteAttachmentByName.cs" />
